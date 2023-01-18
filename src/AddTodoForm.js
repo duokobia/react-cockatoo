@@ -3,8 +3,8 @@ import React from "react";
 const AddTodoForm = () => {
   return (
     <form>
-        <label>Title</label>
-        <input htmlFor="todoTitle" id="todoTitle"></input>
+        <label htmlFor="todoTitle">Title</label>
+        <input id="todoTitle"></input>
         <button>Add</button>
     </form>
   );
