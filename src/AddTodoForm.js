@@ -1,25 +1,29 @@
 import React, {useState} from "react";
 
-const AddTodoForm = ({props}) => {
 
-  const[todoTitle, setTodoTitle] = useState("");
+let AddTodoForm = ({onAddTodo}) => {
+
+  const[inputText, setInputText] = useState("");
   
 
-  function handleAddTodo (event){
+  let handleAddTodo = function (event){
     event.preventDefault(); // Prevent the default behaviour of the form submit.
-    // const todoTitle = event.target.value;
+
+    // Retrieves the value of the title element from 
+    // the evenet target and store it in a variable named todoTitle.
+    let todoTitle = inputText; 
     console.log(todoTitle);
-    // setTodoTitle(event.target.value);
-    // const todoTitle = event.target.title.value
-    props.onAddTodo(event);
-    event.target.reset(); // Reset form onSubmit.
+    setInputText(event.target.value);
+    setInputText(""); // Reset form onSubmit.
+    onAddTodo(todoTitle); // Invokes onAddTodo callback prop and pass the todoTitle as an argument inside this handleAddTodo function
+    
   };
 
 
   return (
     <form onSubmit={(event) => handleAddTodo(event)}>
         <label htmlFor="todoTitle">Title</label>
-        <input id="todoTitle" name="title" onChange={(event) => setTodoTitle(event.target.value)}></input>
+        <input id="todoTitle" name="title" value = {inputText} onChange={(event) => setInputText(event.target.value)}></input>
         <button type="submit">Add</button>
     </form>
   );
