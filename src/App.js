@@ -38,7 +38,6 @@ function App() {
 
       { /* 2 */ }
       <AddTodoForm onAddTodo = {addTodo}/> 
-      <p>{}</p>
       <TodoList todoList = {todoList} />
     </div>
   );
