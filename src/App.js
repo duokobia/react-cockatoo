@@ -10,18 +10,23 @@ import AddTodoForm from "./AddTodoForm";
 // includes:
 
 // ### 1 ###
-// Writing input value to the localStorage.
+// Default state variable stored in localStorage using conditional(ternary) operator
+// to handle string and null primitive data type values.
 
 // ### 2 ###
 // Changing of the DOM by the useState() hook in the custom hook.
 
 function useSemiPersistentState() {
+  
+  const persistentList = localStorage.getItem("savedTodoList")
+  ? JSON.parse(localStorage.getItem("savedTodoList"))
+  : [];  // * 1 * //
 
-  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem("savedTodoList")));
+  const [todoList, setTodoList] = useState(persistentList);
 
   useEffect(() => {
     localStorage.setItem("savedTodoList", JSON.stringify(todoList))
-  }, [todoList]); // * 1 * //
+  }, [todoList]); 
 
   return [todoList, setTodoList];
 
