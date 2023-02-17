@@ -32,6 +32,7 @@ function useSemiPersistentState() {
 
 };
 
+
 function App() {
 
   const [todoList, setTodoList] = useSemiPersistentState();
@@ -40,11 +41,21 @@ function App() {
     setTodoList([newTodo, ...todoList]);  // * 2 * //
   };
 
+  let removeTodo = function(objectID){
+    const filteredTodoList = todoList.filter((todo) => todo.objectID !== objectID
+    );
+    // The filter() method creates a new array filled with elements that pass the condition provided in it.
+    // This means that the filter applies to only the todo item whose id matches the id accepted as argument.
+    // The array is traverse and only the todo element whose id matches that accepted as argument will be filtered.
+
+    setTodoList(filteredTodoList);
+  };
+
   return (
     <Fragment style={{ textAlign: "center" }}>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo = {addTodo}/> 
-      <TodoList todoList = {todoList} />
+      <TodoList todoList = {todoList} onRemoveTodo = {removeTodo} />
     </Fragment>
   );
 };
