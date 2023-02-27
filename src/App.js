@@ -16,6 +16,12 @@ import AddTodoForm from "./AddTodoForm";
 // ### 2 ###
 // Changing of the DOM by the useState() hook in the custom hook.
 
+// ### 3 ###
+// The filter() method creates a new array of elements that passed the condition provided in it.
+// The existing array is traversed and only the todo element whose id matches the argument accepted,
+// is filtered out. This new array is then passed as an argument for the setter function.
+
+
 function useSemiPersistentState() {
   
   const persistentList = localStorage.getItem("savedTodoList")
@@ -32,6 +38,7 @@ function useSemiPersistentState() {
 
 };
 
+
 function App() {
 
   const [todoList, setTodoList] = useSemiPersistentState();
@@ -39,12 +46,18 @@ function App() {
   let addTodo = function(newTodo){
     setTodoList([newTodo, ...todoList]);  // * 2 * //
   };
+  
+  let removeTodo = function(id){
+    const filteredTodoList = todoList.filter((todo) => todo.id !== id); // * 3 * //
+    setTodoList(filteredTodoList);
+    };
+    
 
   return (
     <Fragment style={{ textAlign: "center" }}>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo = {addTodo}/> 
-      <TodoList todoList = {todoList} />
+      <TodoList todoList = {todoList} onRemoveTodo = {removeTodo} />
     </Fragment>
   );
 };
