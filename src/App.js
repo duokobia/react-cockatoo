@@ -5,8 +5,12 @@ import AddTodoForm from "./AddTodoForm";
 
 function App() {
 
-  const [todoList, setTodoList] = useState([]);
+  
+  const [todoList, setTodoList] = useState(() => {
+        return JSON.parse(localStorage.getItem("savedTodoList")) || []
+  });
   const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     new Promise((resolve, reject) =>
@@ -24,6 +28,10 @@ function App() {
         setIsLoading(false);
     });
   }, []);
+
+  useEffect(() => {
+    if (todoList.length > 0) {localStorage.setItem("savedTodoList", JSON.stringify(todoList))}
+  }, [todoList]);
 
   useEffect(() => {
     if(isLoading){
