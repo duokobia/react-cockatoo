@@ -30,11 +30,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (todoList.length > 0) {localStorage.setItem("savedTodoList", JSON.stringify(todoList))}
-  }, [todoList]);
-
-  useEffect(() => {
-    if(isLoading){
+    if(!isLoading){
       localStorage.setItem("savedTodoList", JSON.stringify(todoList))
     }
   }, [isLoading, todoList]); 
