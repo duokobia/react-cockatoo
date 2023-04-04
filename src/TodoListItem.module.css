@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(49, 47, 47);
+    color: #FFFFFF;
+    font-family: 'Alata', sans-serif;
+}
+
+h1{
+    font-size: 1.8rem;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 25rem;
+    min-height: 40%;
+    padding: 2.5rem;
+    border: 0.125rem solid white;
+    border-radius: 0.5rem;
+    margin: auto;
+}
+
+.AppBackground {
+    color:#bab5b5;
+    padding-bottom: 1rem;
+}
+
+.loadingText{
+    color: red;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.InputForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem; 
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.InputField{
+    background-color: #FFFFFF;
+    color: #302e2e;
+    font-size: 1.125rem;
+    padding: 0.20rem 0.5rem;
+    border-radius: 0.35rem;
+    text-transform: capitalize;
+}
+
+.Card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 0.0625rem solid white;
+    border-radius: 0.25rem;
+    margin: 1rem 0;
+    padding: 0.5rem 1.25rem;
+}
+
+.ListItem {
+    color:#d3d0d0;
+    font-size: 1.25rem;
+    list-style: none;
+    justify-content: start;
+    flex-wrap: nowrap;
+    padding-right: 0.75rem;
+}
+
+.title{
+    color:#d3d0d0;
+    padding-right: 0.75rem;
+    padding-bottom: 0.25rem;
+    font-size: 1.35rem;
+}
+
+.AddButton{
+    margin: 0 0.25rem;
+}
+
+.buttonLabel{
+    color:#FFFFFF;
+    opacity: 0.8;
+    padding: 0.2rem 1.25rem;
+    font-size: 1.125rem;
+    border: 0.0625rem solid white;
+    border-radius: 0.25rem;
+}
+
+.buttonLabel:hover{
+    color:#FFFFFF;
+    opacity: 1;
+    font-size: 1.135rem;
+    cursor: pointer;
+}
+
+/* media query for 320px (20 rem) */
+
+@media only screen and (max-width: 20rem) {
+    
+    h1{
+        font-size: 1.4rem;
+    }
+
+    .container {
+        max-width: 19rem;
+        padding: 1.8rem;
+        border: 0.125rem solid white;
+        border-radius: 0.25rem;
+    }    
+    
+    .loadingText{
+        font-size: 1.25rem;
+        padding: 0.75rem 0;
+    }
+
+    .title{
+        padding-right: 0.75rem;
+        padding-bottom: 0.2rem;
+        font-size: 1.135rem;
+    }
+
+    .InputForm {
+        padding-bottom: 1.05rem; 
+        font-size: 0.8rem;
+    }
+
+    .InputField{
+        font-size: 1.0rem;
+        padding: 0.12rem 0.15rem;
+        border-radius: 0.2rem;
+    }
+
+    .AddButton{
+        margin: 0 0.0625rem;
+    }
+
+    .ListItem {
+        font-size: 1.10rem;
+    }
+
+    .buttonLabel{
+        padding: 0.12rem 0.625rem;
+        font-size: 1.0rem;
+        border: 0.0625rem solid white;
+        border-radius: 0.2rem;
+    }
+
+}
