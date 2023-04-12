@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from "./TodoListItem.module.css";
+import PropTypes from 'prop-types';
 
 
 const InputWithLabel = (props) => {
@@ -28,3 +29,7 @@ const InputWithLabel = (props) => {
 };
 
 export default InputWithLabel;
+
+InputWithLabel.propTypes = {
+  props: PropTypes.object
+};
