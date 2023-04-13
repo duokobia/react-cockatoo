@@ -3,24 +3,23 @@ import styles from "./TodoListItem.module.css";
 import PropTypes from 'prop-types';
 
 
-
 const TodoListItem = ({ title, onRemoveTodo, id }) => {
 
-  return ( 
+  return (
     <div className={styles.Card}>
-        <li key={id} >
-         <span className={styles.ListItem}>{title}</span> 
-          <button onClick={() => onRemoveTodo(id)}>
-            <span className={styles.buttonLabel}>Remove</span>
+      <li key={id} >
+        <span className={styles.ListItem}>{title}</span>
+        <button onClick={() => onRemoveTodo(id)}>
+          <span className={styles.buttonLabel}>Remove</span>
         </button></li>
     </div>
   );
 };
-
-export default TodoListItem;
 
 TodoListItem.propTypes = {
   title: PropTypes.string,
   onRemoveTodo: PropTypes.func,
   id: PropTypes.string
 };
+
+export default TodoListItem;

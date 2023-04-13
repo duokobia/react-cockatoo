@@ -28,8 +28,10 @@ const InputWithLabel = (props) => {
   );
 };
 
-export default InputWithLabel;
-
 InputWithLabel.propTypes = {
-  props: PropTypes.object
+  children: PropTypes.string,
+  todoTitle: PropTypes.string,
+  handleTitleChange: PropTypes.func
 };
+
+export default InputWithLabel;
