@@ -4,8 +4,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: rgb(49, 47, 47);
-    color: #FFFFFF;
+    background-color: #111826;
+    color: #E5E7EB;
     font-family: 'Alata', sans-serif;
 }
 
@@ -27,10 +27,13 @@ li{
     justify-content: center;
     max-width: 25rem;
     min-height: 40%;
-    padding: 2.5rem;
-    border: 0.125rem solid white;
     border-radius: 0.5rem;
-    margin: auto;
+    margin: 0 auto;
+    margin-top: 10rem;
+    padding: 2.5rem;
+    box-shadow: 1px 0px 1.5px 5px rgba(207,193,193,0.75);
+    -webkit-box-shadow: 1px 0px 1.5px 5px rgba(207,193,193,0.75);
+    -moz-box-shadow: 1px 0px 1.5px 5px rgba(207,193,193,0.75);
 }
 
 .AppBackground {
@@ -67,14 +70,14 @@ li{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    border: 0.0625rem solid white;
+    border: 0.1rem solid #18c3e6;
     border-radius: 0.25rem;
     margin: 1rem 0;
     padding: 0.5rem 1.25rem;
 }
 
 .ListItem {
-    color:#d3d0d0;
+    color: #E5E7EB;
     font-size: 1.25rem;
     list-style: none;
     justify-content: start;
@@ -83,19 +86,30 @@ li{
 }
 
 .title{
-    color:#d3d0d0;
+    color: #E5E7EB;
     padding-right: 0.75rem;
     padding-bottom: 0.25rem;
     font-size: 1.35rem;
 }
 
 .AddButton{
-    margin: 0 0.25rem;
+    margin: 0 0 0 0.35rem;
+    background-color: #11ff00 !important;
+    color:rgb(22, 21, 21);
+    padding: 0.2rem 1.25rem;
+    font-size: 1.20rem;
+    border: 0.0625rem solid white;
+    border-radius: 0.25rem;
+}
+.AddButton:hover {
+    background-color: #11e802 !important;
+    font-size: 1.2350rem;
+    cursor: pointer;
 }
 
 .buttonLabel{
+    background-color: #E11D48 !important;
     color:#FFFFFF;
-    opacity: 0.8;
     padding: 0.2rem 1.25rem;
     font-size: 1.125rem;
     border: 0.0625rem solid white;
@@ -103,9 +117,8 @@ li{
 }
 
 .buttonLabel:hover{
-    color:#FFFFFF;
-    opacity: 1;
-    font-size: 1.135rem;
+    background-color: #e71442 !important;
+    padding: 0.275rem 1.35rem;
     cursor: pointer;
 }
 
@@ -148,6 +161,7 @@ li{
 
     .AddButton{
         margin: 0 0.0625rem;
+        background-color: aqua;
     }
 
     .ListItem {
@@ -162,3 +176,8 @@ li{
     }
 
 }
+
+/* TO-D0 */
+/* remove the left border on the button */
+/* Media queries */
+
